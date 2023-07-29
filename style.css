@@ -92,8 +92,10 @@ main {
 }
 
 .card {
+    background-color: var(--clr-neutral-white);
     max-width: 500px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    overflow: hidden;
 }
 
 .result-card {
@@ -101,8 +103,7 @@ main {
     background-image: linear-gradient(to bottom, var(--clr-gradient-light-slate-blue), var(--clr-gradient-light-royal-blue));
     text-align: center;
     padding: 2rem;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
+    border-radius: 0 0 2rem 2rem;
 }
 
 .result-card h1 {
@@ -249,11 +250,13 @@ span {
     }
 }
 
+
 @media screen and (min-width: 500px) {
    .card {
         display: flex;
         max-width: 600px;
         max-height: 450px;
+        border-radius: 2rem;
     }
 
     .result-card {
