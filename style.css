@@ -1,0 +1,283 @@
+:root {
+    /* Colors */
+
+    /* Primary */
+    --clr-primary-light-red: hsl(0, 100%, 67%);
+    --clr-primary-orangey-yellow: hsl(39, 100%, 56%);
+    --clr-primary-green-teal: hsl(166, 100%, 37%);
+    --clr-primary-cobalt-blue: hsl(234, 85%, 45%);
+
+    /* Gradients */
+    --clr-gradient-light-slate-blue : hsl(252, 100%, 67%); /* (background) */
+    --clr-gradient-light-royal-blue : hsl(241, 81%, 54%); /* (background) */
+
+    --clr-gradient-violet-blue : hsla(256, 72%, 46%, 1); /* (circle) */
+    --clr-gradient-persian-blue : hsla(241, 72%, 46%, 0); /* (circle) */
+
+
+
+    /* Neutral */
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-pale-blue: hsl(221, 100%, 96%);
+    --clr-neutral-light-lavender: hsl(241, 100%, 89%);
+    --clr-neutral-dark-gray-blue: hsl(224, 30%, 27%);
+
+    /* Fonts */
+    --ff-hanken-grotesk: 'Hanken Grotesk', sans-serif;
+}
+
+/* CSS Reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+/*
+    7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+*/
+#root, #__next {
+    isolation: isolate;
+}
+
+/* General styling */
+
+body {
+    background-color: var(--clr-neutral-pale-blue);
+    font-family: var(--ff-hanken-grotesk);
+    font-size: 18px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    background-color: var(--clr-neutral-white);
+}
+
+.card {
+    max-width: 500px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.result-card {
+    background-color: var(--clr-gradient-light-royal-blue);
+    background-image: linear-gradient(to bottom, var(--clr-gradient-light-slate-blue), var(--clr-gradient-light-royal-blue));
+    text-align: center;
+    padding: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.result-card h1 {
+    color: hsla(0, 0%, 100%, 0.7);
+    font-size: 1.252rem;
+    margin-bottom: 1.2rem;
+}
+
+.result-card .score {
+    color: var(--clr-neutral-white);
+    background-image: linear-gradient(to bottom, var(--clr-gradient-violet-blue),  var(--clr-gradient-persian-blue));
+    width : 8.725rem;
+    height : 8.725rem;
+    -moz-border-radius : calc(8.725rem / 2);
+    -webkit-border-radius : calc(8.725rem / 2);
+    border-radius : 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.result-card .score .real-score {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.result-card .score .max-score {
+    color: hsla(0, 0%, 100%, 0.7);
+    font-size: 1.2rem;
+}
+
+.result-card h2 {
+    color: var(--clr-neutral-white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.result-card .score-details {
+    color: hsla(0, 0%, 100%, 0.750);
+    font-size: 1rem;
+}
+
+.summary-card {
+    background-color: var(--clr-neutral-white);
+    padding: 1.5rem 2rem;
+    font-weight: 600;
+}
+
+.summary-card h1 {
+    color: var(--clr-neutral-dark-gray-blue);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.reaction {
+    background-color: hsla(0, 100%, 67%, 0.08);
+    margin-bottom: 1rem;
+    border-radius: 0.625rem;
+}
+
+.reaction .logo {
+    color: var(--clr-primary-light-red);
+}
+
+.memory {
+    background-color: hsla(39, 100%, 56%, 0.08);
+    margin-bottom: 1rem;
+    border-radius: 0.625rem;
+}
+
+.memory .logo {
+    color: var(--clr-primary-orangey-yellow);
+}
+
+.verbal {
+    background-color: hsla(166, 100%, 37%, 0.08);
+    margin-bottom: 1rem;
+    border-radius: 0.625rem;
+}
+
+.verbal .logo {
+    color: var(--clr-primary-green-teal);
+}
+
+.visual {
+    background-color: hsla(234, 85%, 45%, 0.08);
+    margin-bottom: 2rem;
+    border-radius: 0.625rem;
+}
+
+.visual .logo {
+    color: var(--clr-primary-cobalt-blue);
+}
+
+.reaction .score-reaction, .memory .score-memory, .verbal .score-verbal, .visual .score-visual {
+    color: var(--clr-neutral-dark-gray-blue);
+}
+
+span {
+    color: hsla(224, 30%, 27%, 0.7);;
+}
+
+.reaction, .memory, .verbal, .visual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.logo {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.button {
+    background-color: var(--clr-neutral-dark-gray-blue);
+    color: var(--clr-neutral-white);
+    font-size: 1rem;
+    text-align: center;
+    border: 0;
+    padding: 0.8rem;
+    border-radius: 360px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-image: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+@media screen and (max-width: 260px) {
+    .reaction, .memory, .verbal, .visual {
+        flex-direction: column;
+    }
+ 
+    .summary-card h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 500px) {
+   .card {
+        display: flex;
+        max-width: 600px;
+        max-height: 450px;
+    }
+
+    .result-card {
+        border-radius: 0 2rem 2rem 0;
+    }
+
+    .result-card, .summary-card {
+        width: 50%;
+    }
+
+    .result-card h1, .result-card .score {
+        margin-bottom: 2rem;
+    }
+
+    .result-card .score {
+        width : 11rem;
+        height : 11rem;
+        -moz-border-radius : 5.5rem;
+        -webkit-border-radius : 5.5rem;
+        border-radius : 50%; 
+    }
+}
+
+/*
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+*/
